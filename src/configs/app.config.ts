@@ -43,5 +43,5 @@ export default (): ApplicationConfig => ({
 
     configs: [],
 
-    isDebug: true
+    isDebug: env('APP_DEBUG', false),
 });
