@@ -6,8 +6,6 @@ import { readableStreamFromReader } from 'https://deno.land/std@0.141.0/streams/
 
 import { publicPath, view, template } from '@lara-io/helpers';
 
-Route.get("/", "index", [HomeController, "index"]);
-
 Route.get("/atom", "test", () => {
     template().share({
         minecraft: "https://minecraft.net/en-us/download/server/",
@@ -97,3 +95,5 @@ Route.get("/map", "map", () => {
 Route.get("/json", "json", () => {
     return true
 });
+
+Route.get("/{*}", "index", [HomeController, "index"]);
