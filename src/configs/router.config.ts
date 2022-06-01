@@ -1,4 +1,4 @@
-import { RouterConfig } from '@lara-io/types';
+import { RouterConfig } from 'https://raw.githubusercontent.com/JackBello/lara-io/master/framework/modules/types.ts';
 
 export default (): RouterConfig => ({
     strict: true,

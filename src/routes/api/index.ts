@@ -1,6 +1,6 @@
-import { Route } from '@lara-io/fecades';
+import { Route } from 'https://raw.githubusercontent.com/JackBello/lara-io/master/framework/modules/fecades.ts';
 
-import { publicPath } from '@lara-io/helpers';
+import { publicPath } from 'https://raw.githubusercontent.com/JackBello/lara-io/master/framework/modules/helpers.ts';
 
 Route.get("/", "", () => {
     const data = {

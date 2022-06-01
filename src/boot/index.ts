@@ -1,4 +1,4 @@
-import { Application } from '@lara-io/core';
+import { Application } from 'https://raw.githubusercontent.com/JackBello/lara-io/master/framework/modules/core.ts';
 
 import AppConfig from '../configs/app.config.ts';
 import ServerConfig from '../configs/server.config.ts';

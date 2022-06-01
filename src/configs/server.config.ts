@@ -1,5 +1,5 @@
-import { ServerConfig } from '@lara-io/types';
-import { env } from '@lara-io/helpers';
+import { ServerConfig } from 'https://raw.githubusercontent.com/JackBello/lara-io/master/framework/modules/types.ts';
+import { env } from 'https://raw.githubusercontent.com/JackBello/lara-io/master/framework/modules/helpers.ts';
 
 export default (): ServerConfig => ({
     hostname: env('SERVER_NAME', 'localhost'),

@@ -1,4 +1,4 @@
-import { Provider } from '@lara-io/core';
+import { Provider } from 'https://raw.githubusercontent.com/JackBello/lara-io/master/framework/modules/core.ts';
 
 export default class RoutesProvider extends Provider {
     protected boot() {

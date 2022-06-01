@@ -1,6 +1,6 @@
-import { FundationProvider } from '@lara-io/providers';
-import { ApplicationConfig } from '@lara-io/types';
-import { env } from '@lara-io/helpers';
+import { FundationProvider } from 'https://raw.githubusercontent.com/JackBello/lara-io/master/framework/modules/providers.ts';
+import { ApplicationConfig } from 'https://raw.githubusercontent.com/JackBello/lara-io/master/framework/modules/types.ts';
+import { env } from 'https://raw.githubusercontent.com/JackBello/lara-io/master/framework/modules/helpers.ts';
 
 import RoutesProvider from '../app/providers/routes.provider.ts';
 import TemplatesProvider from '../app/providers/templates.provider.ts'

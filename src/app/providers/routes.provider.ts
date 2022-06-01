@@ -1,8 +1,8 @@
-import { Provider } from '@lara-io/core';
+import { Provider } from 'https://raw.githubusercontent.com/JackBello/lara-io/master/framework/modules/core.ts';
 
-import { getBasePath } from '@lara-io/helpers';
+import { getBasePath } from 'https://raw.githubusercontent.com/JackBello/lara-io/master/framework/modules/helpers.ts';
 
-import { Route } from '@lara-io/fecades';
+import { Route } from 'https://raw.githubusercontent.com/JackBello/lara-io/master/framework/modules/fecades.ts';
 
 export default class RoutesProvider extends Provider {
     protected async boot() {

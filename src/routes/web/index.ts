@@ -1,10 +1,10 @@
-import { Route } from '@lara-io/fecades';
+import { Route } from 'https://raw.githubusercontent.com/JackBello/lara-io/master/framework/modules/fecades.ts';
 
 import HomeController from '../../app/http/controllers/home.controller.ts';
 
 import { readableStreamFromReader } from 'https://deno.land/std@0.141.0/streams/mod.ts';
 
-import { publicPath, view, template } from '@lara-io/helpers';
+import { publicPath, view, template } from 'https://raw.githubusercontent.com/JackBello/lara-io/master/framework/modules/helpers.ts';
 
 Route.get("/atom", "test", () => {
     template().share({
