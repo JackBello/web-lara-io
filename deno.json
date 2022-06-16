@@ -1,0 +1,5 @@
+{
+    "tasks": {
+        "start": "deno run -C tsconfig.json -A --unstable --watch --import-map=imports.json main.ts"
+    }
+}
