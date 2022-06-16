@@ -6,11 +6,11 @@ export default (): RouterConfig => ({
 
     files: [
         {
-            path: "src/routes/web/index.ts",
+            path: "routes/web/index.ts",
         },
         {
-            path: "src/routes/api/index.ts",
-            subdomain: "api"
+            path: "routes/api/index.ts",
+            prefix: "api"
         }
     ]
 });
