@@ -2,7 +2,7 @@ import { Route } from '@lara-io/fecades';
 
 import { publicPath } from '@lara-io/helpers';
 
-Route.get("/", "", () => {
+Route.get("/", "apo", () => {
     const data = {
         name: "Deno",
         version: Deno.version.deno,
@@ -37,6 +37,6 @@ Route.post("/upload", "upload", ({ request }) => {
     return `success`;
 });
 
-Route.post("/json", " body.json", ({ request }) => {
+Route.post("/json", "body.json", ({ request }) => {
     return request.cookies;
 });

@@ -9,19 +9,19 @@ export default (): ApplicationConfig => ({
     name: env('APP_NAME', 'lara-io'),
 
     app: {
-        http: "src/app/http",
+        http: "app/http",
     },
 
     paths: {
-        app: "src/app",
-        configs: "src/configs",
-        statics: "src/public",
-        resources: "src/resources",
-        router: "src/router",
-        storage: "src/storage",
-        database: "src/database",
-        ecosystems: "src/ecosystems",
-        packages: "src/packages",
+        app: "app",
+        configs: "configs",
+        statics: "public",
+        resources: "resources",
+        router: "router",
+        storage: "storage",
+        database: "database",
+        ecosystems: "ecosystems",
+        packages: "packages",
     },
 
     services: [],

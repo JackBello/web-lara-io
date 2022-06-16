@@ -96,4 +96,10 @@ Route.get("/json", "json", () => {
     return true
 });
 
+Route.get("/json-test", "json.test", () => {
+console.log(1);
+
+    return true
+});
+
 Route.get("/{*}", "index", [HomeController, "index"]);
