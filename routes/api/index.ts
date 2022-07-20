@@ -2,7 +2,7 @@ import { Route } from '@lara-io/fecades';
 
 import { publicPath } from '@lara-io/helpers';
 
-Route.get("/", "apo", () => {
+Route.get("/", "apo", ({ response }) => {
     const data = {
         name: "Deno",
         version: Deno.version.deno,
@@ -10,16 +10,11 @@ Route.get("/", "apo", () => {
         v8: Deno.version.v8,
     }
 
-    return new Response(JSON.stringify(data), {
-        status: 200,
-        headers: {
-            "Content-Type": "application/json"
-        }
-    })
-});
+    return response().json(data);
+}, "api-cors");
 
 Route.post("/upload", "upload", ({ request }) => {
-    const { video } = request.files;
+    const { video } = request().files;
     
     const path = publicPath("videos/");
 
@@ -37,6 +32,8 @@ Route.post("/upload", "upload", ({ request }) => {
     return `success`;
 });
 
-Route.post("/json", "body.json", ({ request }) => {
-    return request.cookies;
+Route.post("/json", "body.json", ({ response }) => {
+    response().header("mama", "papa")
+
+    return response().json([1,2,3]);
 });

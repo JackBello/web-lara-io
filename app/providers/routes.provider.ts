@@ -17,7 +17,7 @@ export default class RoutesProvider extends Provider {
         if (files) {
             for(const file of files) {
                 const path = getBasePath(file.path);
-    
+                
                 if(file.subdomain && file.prefix) {
                     await Route.domain(`${file.subdomain}.${hostname}`).prefix(file.prefix).group(path);
                 } else if(file.subdomain && !file.prefix) {
