@@ -1,4 +1,4 @@
-import { FundationProvider } from '@lara-io/providers';
+import { FoundationProvider } from '@lara-io/providers';
 import { ApplicationConfig } from '@lara-io/types';
 import { env } from '@lara-io/helpers';
 
@@ -28,8 +28,8 @@ export default (): ApplicationConfig => ({
 
     providers: [
         {
-            name: "fundation",
-            instance: FundationProvider
+            name: "foundation",
+            instance: FoundationProvider
         },
         {
             name: "routes",
