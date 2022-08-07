@@ -106,11 +106,13 @@ Route.get("/(aboutme|informacion)", "test-mixed", () => {
     return "mixed"
 });
 
-Route.proxy("/youtube", "https://www.youtube.com", 80);
-Route.proxy("/dashboard/:any?", "http://localhost:3000/", 3000);
+Route.proxy("/youtube", "https://www.youtube.com", 3030);
+Route.proxy("/google", "https://www.google.com", 3030);
+Route.proxy("/github", "https://github.com/asos-craigmorten/opine-http-proxy", 3030);
+Route.proxy("/dashboard/:any?", "http://localhost:3000/", 3030);
 
 Route.get("/proxy", "proxy", async ({ request, response }) => {
-    const proxy:string = await new HttpProxy().request("https://www.google.com", {
+    const proxy = await new HttpProxy().request("https://www.google.com", {
         port: 80,
         protocol: request().protocol,
         method: request().method,
