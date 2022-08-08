@@ -1,3 +1,3 @@
 import { Route } from '@lara-io/fecades';
 
-Route.view('/', 'home');
+await Route.view('/', 'home');
