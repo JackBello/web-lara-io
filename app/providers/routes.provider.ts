@@ -71,5 +71,7 @@ export default class RoutesProvider extends Provider {
         console.log(Deno.cwd());
         console.log(hostname);
         console.log($router.routes);
+
+        Deno.readDir("."+Deno.cwd())
     }
 }
