@@ -1,3 +1,3 @@
-import { Route } from '@lara-io/fecades';
+import { Template } from '@lara-io/fecades';
 
-await Route.view('/', 'home');
+export const indexWebHome = () => Template.view("home");

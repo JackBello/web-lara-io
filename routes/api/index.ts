@@ -1,6 +1,5 @@
-import { Route } from '@lara-io/fecades';
-
-Route.get("/", "api.index", () => {
+// index route to api
+export const indexApi = () => {
     const data = {
         name: "Deno",
         version: Deno.version.deno,
@@ -9,4 +8,4 @@ Route.get("/", "api.index", () => {
     }
 
     return data
-});
+}
