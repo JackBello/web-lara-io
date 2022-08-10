@@ -74,6 +74,8 @@ export default class RoutesProvider extends Provider {
 
         console.log(import.meta.url);
 
-        Deno.readDir(Deno.cwd())
+        for (const name in Deno.readDir(Deno.cwd())) {
+            console.log(name);
+        }
     }
 }
