@@ -69,13 +69,6 @@ export default class RoutesProvider extends Provider {
         }
 
         console.log(Deno.cwd());
-        console.log(hostname);
-        console.log($router.routes);
-
         console.log(import.meta.url);
-
-        for await (const dir of Deno.readDir(Deno.cwd())) {
-            console.log(dir.name);
-        }
     }
 }
