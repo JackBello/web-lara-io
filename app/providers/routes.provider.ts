@@ -67,8 +67,5 @@ export default class RoutesProvider extends Provider {
                 }
             }
         }
-
-        console.log(Deno.cwd());
-        console.log(import.meta.url);
     }
 }
