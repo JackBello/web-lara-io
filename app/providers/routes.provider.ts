@@ -12,6 +12,8 @@ export default class RoutesProvider extends Provider {
         const { files, strict, routes } = this.app.config('router');
         const { hostname } = this.app.config('server');
 
+        console.log(hostname);
+
         $router.setStrict(strict);
 
         if (files) {
