@@ -1,5 +1,12 @@
 // index route to api
-export const indexApi = () => {
+import type { TRouteContext } from '@lara-io/types';
+
+export const indexApi = ({ request } : TRouteContext) => {
+    const { ip, method } = request();
+
+    console.log(ip);
+    console.log(method);
+
     const data = {
         name: "Deno",
         version: Deno.version.deno,
