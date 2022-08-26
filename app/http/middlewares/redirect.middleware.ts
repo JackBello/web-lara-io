@@ -1,8 +1,11 @@
 const redirectToWWW = ({ request }: any, next: any) => {
-    const { baseUrl } = request();
+    const { baseUrl, route } = request();
 
     if (!baseUrl.includes("www")) {
-        return Response.redirect("https://www.lara-io.com", 302)
+        console.log(baseUrl);
+        console.log(route);
+
+        // return Response.redirect("https://www.lara-io.com", 302)
     }
 
     next();
