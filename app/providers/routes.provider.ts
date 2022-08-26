@@ -37,6 +37,7 @@ export default class RoutesProvider extends Provider {
                     method: route.method,
                     redirect: route.redirect,
                     middleware: route.middleware,
+                    domain: route.domain
                 }, route.action);
 
                 if (route.group) {
@@ -56,6 +57,7 @@ export default class RoutesProvider extends Provider {
                     method: route.method,
                     redirect: route.redirect,
                     middleware: route.middleware,
+                    domain: route.domain
                 }, route.action);
 
                 if (route.group) {
