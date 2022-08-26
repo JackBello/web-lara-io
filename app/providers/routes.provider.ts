@@ -50,20 +50,20 @@ export default class RoutesProvider extends Provider {
             };
 
             for (const route of routes) {
-                console.log(route.domain);
-
-                $router.registerRoute({
-                    uri: route.uri,
-                    name: route.name,
-                    regexp: route.regexp,
-                    method: route.method,
-                    redirect: route.redirect,
-                    middleware: route.middleware,
-                    domain: route.domain
-                }, route.action);
+                if (route.uri) {
+                    $router.registerRoute({
+                        uri: route.uri,
+                        name: route.name,
+                        regexp: route.regexp,
+                        method: route.method,
+                        redirect: route.redirect,
+                        middleware: route.middleware,
+                        domain: route.domain
+                    }, route.action);
+                }
 
                 if (route.group) {
-                    const base = route.uri;
+                    const base = route.uri ? route.uri : "";
                     const domain = route.domain;
 
                     route.group.forEach((route:any) => {

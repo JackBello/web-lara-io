@@ -10,18 +10,20 @@ export default (): RouterConfig => ({
 
     routes: [
         {
-            uri: "/",
-            method: "GET",
-            name: "home",
-            action: indexWebHome,
             domain: `www.${env("SERVER_NAME", "lara-io")}`,
             group: [
+                {
+                    uri: "/",
+                    method: "GET",
+                    name: "home",
+                    action: indexWebHome,
+                },
                 {
                     uri: "/api/",
                     method: "GET",
                     name: "api.index",
                     action: indexApi,
-                },
+                }
             ]
         }
     ]
