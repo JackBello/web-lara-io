@@ -29,7 +29,7 @@ export default class RoutesProvider extends Provider {
                 }
             }
         } else if (routes) {
-            const registerGroup = (route:any, path:string, domain: string) => {
+            const registerGroup = (route:any, path:string) => {
                 $router.registerRoute({
                     uri: `${path}${route.uri}`,
                     name: route.name,
@@ -37,14 +37,13 @@ export default class RoutesProvider extends Provider {
                     method: route.method,
                     redirect: route.redirect,
                     middleware: route.middleware,
-                    domain: domain
                 }, route.action);
 
                 if (route.group) {
                     const base = `${path}${route.uri}`;
 
                     route.group.forEach((route:any) => {
-                        registerGroup(route, base, domain);
+                        registerGroup(route, base);
                     });
                 }
             };
@@ -58,16 +57,20 @@ export default class RoutesProvider extends Provider {
                         method: route.method,
                         redirect: route.redirect,
                         middleware: route.middleware,
-                        domain: route.domain
                     }, route.action);
-                }
+                } else if (route.group && route.domain) {
+                    Route.domain(`${route.domain}.${hostname}`).group(() => {
+                        const base = route.uri ? route.uri : "";
 
-                if (route.group) {
+                        route.group.forEach((route:any) => {
+                            registerGroup(route, base);
+                        });
+                    })
+                } else if (route.group && !route.domain) {
                     const base = route.uri ? route.uri : "";
-                    const domain = route.domain;
 
                     route.group.forEach((route:any) => {
-                        registerGroup(route, base, domain);
+                        registerGroup(route, base);
                     });
                 }
             }
