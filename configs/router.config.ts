@@ -9,18 +9,19 @@ export default (): RouterConfig => ({
 
     routes: [
         {
-            uri: "/api/",
-            method: "GET",
-            name: "api.index",
-            action: indexApi,
-            domain: "www"
-        },
-        {
             uri: "/",
             method: "GET",
             name: "home",
             action: indexWebHome,
-            domain: "www"
+            domain: "www",
+            group: [
+                {
+                    uri: "/api/",
+                    method: "GET",
+                    name: "api.index",
+                    action: indexApi,
+                },
+            ]
         }
     ]
 });
