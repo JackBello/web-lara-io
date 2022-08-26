@@ -50,6 +50,8 @@ export default class RoutesProvider extends Provider {
             };
 
             for (const route of routes) {
+                console.log(route.domain);
+
                 $router.registerRoute({
                     uri: route.uri,
                     name: route.name,
