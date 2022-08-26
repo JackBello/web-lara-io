@@ -1,6 +1,5 @@
 // import { Storage } from "@lara-io/fecades";
-import { storagePath, publicPath } from "@lara-io/helpers";
-import { asset } from "@lara-io/helpers";
+import { storagePath, publicPath, asset } from "@lara-io/helpers";
 
 export default () => ({
     disks: {

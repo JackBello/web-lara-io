@@ -1,4 +1,5 @@
 import { HttpKernel } from '@lara-io/core';
+import redirectToWWW from './middlewares/redirect.middleware.ts';
 
 export default class Kernel extends HttpKernel {
     protected routeMiddleware = {
@@ -10,4 +11,9 @@ export default class Kernel extends HttpKernel {
         "api": [],
         "graphql": []
     }
+
+    protected middleware = [
+        ...super.middleware,
+        redirectToWWW
+    ]
 }

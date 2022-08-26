@@ -10,15 +10,17 @@ export default (): RouterConfig => ({
     routes: [
         {
             uri: "/api/",
-            action: indexApi,
             method: "GET",
             name: "api.index",
+            action: indexApi,
+            domain: "www"
         },
         {
             uri: "/",
             method: "GET",
             name: "home",
-            action: indexWebHome
+            action: indexWebHome,
+            domain: "www"
         }
     ]
 });
