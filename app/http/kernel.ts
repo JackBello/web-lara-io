@@ -13,7 +13,7 @@ export default class Kernel extends HttpKernel {
     }
 
     protected middleware = [
-        ...super.middleware,
+        ...[...super.middleware],
         redirectToWWW
     ]
 }
