@@ -1,5 +1,4 @@
 import { RouterConfig } from '@lara-io/types';
-import { env } from '@lara-io/helpers';
 
 import { indexApi } from '../routes/api/index.ts'
 import { indexWebHome } from '../routes/web/index.ts'
@@ -10,7 +9,7 @@ export default (): RouterConfig => ({
 
     routes: [
         {
-            domain: `www.${env("SERVER_NAME", "lara-io")}`,
+            domain: `www`,
             group: [
                 {
                     uri: "/",
@@ -19,7 +18,7 @@ export default (): RouterConfig => ({
                     action: indexWebHome,
                 },
                 {
-                    uri: "/api/",
+                    uri: "/api",
                     method: "GET",
                     name: "api.index",
                     action: indexApi,

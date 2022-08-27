@@ -29,7 +29,7 @@ export default class RoutesProvider extends Provider {
                 }
             }
         } else if (routes) {
-            const registerGroup = (route:any, path:string) => {
+            const register = (route:any, path:string) => {
                 $router.registerRoute({
                     uri: `${path}${route.uri}`,
                     name: route.name,
@@ -43,34 +43,27 @@ export default class RoutesProvider extends Provider {
                     const base = `${path}${route.uri}`;
 
                     route.group.forEach((route:any) => {
-                        registerGroup(route, base);
+                        register(route, base);
                     });
                 }
             };
 
             for (const route of routes) {
                 if (route.uri) {
-                    $router.registerRoute({
-                        uri: route.uri,
-                        name: route.name,
-                        regexp: route.regexp,
-                        method: route.method,
-                        redirect: route.redirect,
-                        middleware: route.middleware,
-                    }, route.action);
+                    register(route, "");
                 } else if (route.group && route.domain) {
                     Route.domain(`${route.domain}.${hostname}`).group(() => {
                         const base = route.uri ? route.uri : "";
 
                         route.group.forEach((route:any) => {
-                            registerGroup(route, base);
+                            register(route, base);
                         });
                     })
                 } else if (route.group && !route.domain) {
                     const base = route.uri ? route.uri : "";
 
                     route.group.forEach((route:any) => {
-                        registerGroup(route, base);
+                        register(route, base);
                     });
                 }
             }
