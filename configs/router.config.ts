@@ -9,7 +9,7 @@ export default (): RouterConfig => ({
 
     routes: [
         {
-            domain: `www`,
+            // domain: `www`,
             group: [
                 {
                     uri: "/",
