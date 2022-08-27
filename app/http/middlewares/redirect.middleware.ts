@@ -8,7 +8,9 @@ const redirectToWWW = ({ request }: TRouteContext, next: any) => {
 
         const urlRedirect = `${protocol}://www.${hostname}${port ? `:${port}` : ""}`;
 
-        return Response.redirect(urlRedirect, 302)
+        console.log(urlRedirect);
+
+        // return Response.redirect(urlRedirect, 302)
     }
 
     next();
