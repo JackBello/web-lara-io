@@ -3,6 +3,9 @@ import type { TRouteContext } from '@lara-io/types';
 const redirectToWWW = ({ request }: TRouteContext, next: any) => {
     const { baseUrl } = request();
 
+    console.log("1",baseUrl);
+
+
     if (!baseUrl.includes("www")) {
         const { hostname, protocol, port } = new URLPattern(baseUrl);
 
