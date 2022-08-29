@@ -1,5 +1,4 @@
 import { Route } from '@lara-io/fecades';
-import { HttpProxy } from '@lara-io/core';
 
 import HomeController from '../../app/http/controllers/home.controller.ts';
 
@@ -106,23 +105,10 @@ Route.get("/(aboutme|informacion)", "test-mixed", () => {
     return "mixed"
 });
 
-Route.proxy("/youtube", "https://www.youtube.com", 3030);
-Route.proxy("/google", "https://www.google.com", 3030);
-Route.proxy("/github", "https://github.com/asos-craigmorten/opine-http-proxy", 3030);
-Route.proxy("/dashboard/:any?", "http://localhost:3000/", 3030);
-
-Route.get("/proxy", "proxy", async ({ request, response }) => {
-    const proxy = await new HttpProxy().request("https://www.google.com", {
-        port: 80,
-        protocol: request().protocol,
-        method: request().method,
-        url: request().fullUrl
-    })
-
-    return response(proxy, 200, {
-        "Content-Type": "text/html"
-    })
-});
+Route.proxy("/youtube", "https://www.youtube.com", 443);
+Route.proxy("/google", "https://www.google.com", 443);
+Route.proxy("/github", "https://github.com/asos-craigmorten/opine-http-proxy", 443);
+Route.proxy("/empleados", "http://localhost:3000/empleados", 3000);
 
 Route.get("/:index", "index", [HomeController, "index"]);
 Route.post("/", "store", [HomeController, "store"]);
