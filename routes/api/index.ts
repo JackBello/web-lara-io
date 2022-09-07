@@ -4,6 +4,8 @@ import type { TRouteContext } from '@lara-io/types';
 export const indexApi = ({ request } : TRouteContext) => {
     const { ip, method, baseUri } = request();
 
+    console.log(ip);
+
     const data = {
         name: "Deno",
         version: Deno.version?.deno,
@@ -16,5 +18,7 @@ export const indexApi = ({ request } : TRouteContext) => {
         }
     }
 
-    return data
+    data;
+
+    return Response.redirect("https://mega.nz/folder/PDREQKCJ#Z75x5lWkQIyYfC2lUezd9A")
 }
